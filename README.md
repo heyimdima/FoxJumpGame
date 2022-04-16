@@ -6,8 +6,8 @@ This is the game I wrote, using the pygame library, it's a 2D endless game about
 Game has multiple screens, high score, and game over screen.
 
 ---
-## Short Gameplay Video Demo
-
+## Short Gameplay Demo
+![game_demo](https://user-images.githubusercontent.com/59861277/163667985-0f3653be-da93-421a-ae81-cb6dada36434.gif)
 
 ---
 ## Objective
