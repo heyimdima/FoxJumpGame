@@ -77,12 +77,55 @@ some code...
 ```
 * Frames to walk left are flipped using `pygame.transform.flip` in order to efficiently write the code.
 
+```python
+        # show walking animation
+        if self.walking:
+            if now - self.last_update > 100:
+                self.last_update = now
+                self.current_frame = (self.current_frame + 1) % len(self.walk_frames_l)
+                bottom = self.rect.bottom
+                if self.vel.x > 0:
+                    self.image = self.walk_frames_r[self.current_frame]
+                else:
+                    self.image = self.walk_frames_l[self.current_frame]
+                self.rect = self.image.get_rect()
+                self.rect.bottom = bottom
+```
 ![walk_animation_demo](https://user-images.githubusercontent.com/59861277/163666730-8d7fe2d5-fbf6-4e60-b04c-21152e24ea24.gif)
 
 ---
 ### Jump Animation
-![jump_animation_demo](https://user-images.githubusercontent.com/59861277/163666657-77a0f0ef-9f03-4fd8-9406-17fde0f06ec0.gif)
+* Consist of 2 frames
+```python
+        # jump frames
+        self.jump_frames_r = [self.game.spritesheet.get_image(40, 57, 23, 21),
+                              self.game.spritesheet.get_image(76, 55, 21, 22)]
+        self.jump_frames_l = []
+        for frame in self.jump_frames_r:
+            frame.set_colorkey(BLACK)
+            self.jump_frames_l.append(pg.transform.flip(frame, True, False))
+```
 
+```python
+        # show jumping animation if we're jumping
+        if self.jumping:
+            if self.vel.y < 0 and self.vel.x > 0:
+                self.image = self.jump_frames_r[0]
+                self.walking = False
+        if self.jumping:
+            if self.vel.y > 0 and self.vel.x > 0:
+                self.image = self.jump_frames_r[1]
+                self.walking = False
+        if self.jumping:
+            if self.vel.y < 0 and self.vel.x < 0:
+                self.image = self.jump_frames_l[0]
+                self.walking = False
+        if self.jumping:
+            if self.vel.y > 0 and self.vel.x < 0:
+                self.image = self.jump_frames_l[1]
+                self.walking = False
+```
+![jump_animation_demo](https://user-images.githubusercontent.com/59861277/163666657-77a0f0ef-9f03-4fd8-9406-17fde0f06ec0.gif)
 
 
 ---
