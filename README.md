@@ -6,7 +6,7 @@ This is the game I wrote, using the pygame library, it's a 2D endless game about
 Game has multiple screens, high score, and game over screen.
 
 ---
-## Short Video Demo
+## Short Gameplay Video Demo
 
 
 ---
@@ -31,10 +31,37 @@ My goal was to create a 2D game that would be similar to the game I played when 
 
 ---
 ### Idle Animation
+* Consist of 4 frames
+
+```python
+...some code
+        # idle frames
+        self.idle_frames = [self.game.spritesheet.get_image(7, 24, 18, 22),
+                            self.game.spritesheet.get_image(41, 25, 19, 21),
+                            self.game.spritesheet.get_image(74, 26, 21, 20),
+                            self.game.spritesheet.get_image(6, 59, 19, 21)]
+        for frame in self.idle_frames:
+            frame.set_colorkey(BLACK)
+some code...
+```
+```python
+...some code
+   # show idle animation
+        if not self.jumping and not self.walking:
+            if now - self.last_update > 150:
+                self.last_update = now
+                self.current_frame = (self.current_frame + 1) % len(self.idle_frames)
+                bottom = self.rect.bottom
+                self.image = self.idle_frames[self.current_frame]
+                self.rect = self.image.get_rect()
+                self.rect.bottom = bottom
+some code...
+```
 ![idle_animation_demo](https://user-images.githubusercontent.com/59861277/163666608-dd83b281-e3e8-47c6-8904-02410f796e62.gif)
 
 ---
 ### Walk Animation
+![walk_animation_demo](https://user-images.githubusercontent.com/59861277/163666730-8d7fe2d5-fbf6-4e60-b04c-21152e24ea24.gif)
 
 ---
 ### Jump Animation
