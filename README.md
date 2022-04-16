@@ -38,6 +38,7 @@ My goal was to create a 2D game that would be similar to the game I played when 
 
 ---
 ### Jump Animation
+![jump_animation_demo](https://user-images.githubusercontent.com/59861277/163666657-77a0f0ef-9f03-4fd8-9406-17fde0f06ec0.gif)
 
 
 
