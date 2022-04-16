@@ -19,7 +19,7 @@ My goal was to create a 2D game that would be similar to the game I played when 
 * Create a game that has some sort of goal(such as beating the highscore), and is actually playable. 
 * Learn the pygame library (reference: https://www.pygame.org/news).
 * Practice using classes python.
-* Learn how to animate a Player.
+* Learn how to animate sprites.
 * Learn how to create basic collisions between sprites.
 
 ---
@@ -180,3 +180,9 @@ some code...
 some code...
 ```
 <img width="478" alt="Screen Shot 2022-04-16 at 12 26 09 AM" src="https://user-images.githubusercontent.com/59861277/163666032-5a16a9d7-4d6d-482a-8323-a9aaa7ee3ad0.png">
+
+---
+## What I Learned
+* Improved my undestanding of pygame library.
+* Learned how to animate sprites using spritesheets.
+* Improved my Python skills.
