@@ -7,6 +7,7 @@ Game has multiple screens, high score, and game over screen.
 
 ---
 ## Short Gameplay Demo
+* not the original framerate, since this is a video that was converted to GIF
 ![game_demo](https://user-images.githubusercontent.com/59861277/163667985-0f3653be-da93-421a-ae81-cb6dada36434.gif)
 
 ---
