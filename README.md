@@ -61,6 +61,22 @@ some code...
 
 ---
 ### Walk Animation
+* Consist of 6 frames
+```python
+            # walk frames
+        self.walk_frames_r = [self.game.spritesheet.get_image(7, 92, 18, 22),
+                              self.game.spritesheet.get_image(41, 91, 20, 22),
+                              self.game.spritesheet.get_image(77, 92, 18, 22),
+                              self.game.spritesheet.get_image(113, 11, 18, 22),
+                              self.game.spritesheet.get_image(114, 44, 17, 22),
+                              self.game.spritesheet.get_image(113, 79, 18, 22)]
+        self.walk_frames_l = []
+        for frame in self.walk_frames_r:
+            frame.set_colorkey(BLACK)
+            self.walk_frames_l.append(pg.transform.flip(frame, True, False))
+```
+* Frames to walk left are flipped using `pygame.transform.flip` in order to efficiently write the code.
+
 ![walk_animation_demo](https://user-images.githubusercontent.com/59861277/163666730-8d7fe2d5-fbf6-4e60-b04c-21152e24ea24.gif)
 
 ---
